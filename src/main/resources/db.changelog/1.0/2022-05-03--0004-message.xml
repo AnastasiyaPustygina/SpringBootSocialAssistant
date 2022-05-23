@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <changeSet id="2022-05-03--0004-message" author="apustygina">
+        <preConditions>
+            <not>
+                <tableExists tableName="message"/>
+            </not>
+        </preConditions>
+        <createTable tableName="message">
+            <column name="id"
+                    type="NUMERIC(19,0)"
+                    autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="whose"
+                    type="VARCHAR(50)">
+                <constraints nullable = "false"/>
+            </column>
+            <column name="value"
+                    type="VARCHAR(1000)">
+            <constraints nullable = "false"/>
+            </column>
+            <column name="time"
+                    type="VARCHAR(50)">
+                <constraints nullable = "false"/>
+            </column>
+            <column name="chat_id"
+                    type="NUMERIC(19,0)">
+                <constraints nullable="false"
+                             foreignKeyName="fk_message_chat"
+                             references="chat(id)"
+                             deleteCascade="true"/>
+            </column>
+
+        </createTable>
+
+    </changeSet>
+</databaseChangeLog>

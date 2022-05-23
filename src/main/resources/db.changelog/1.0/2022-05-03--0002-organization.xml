@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <changeSet id="2022-05-03--0002-organization" author="apustygina">
+        <preConditions>
+            <not>
+                <tableExists tableName="organization"/>
+            </not>
+        </preConditions>
+        <createTable tableName="organization">
+            <column name="id"
+                    type="NUMERIC(19,0)"
+                    autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="name"
+                    type="VARCHAR(100)">
+                <constraints nullable = "false"/>
+            </column>
+            <column name="type"
+                    type="VARCHAR(100)">
+                <constraints nullable = "false"/>
+            </column>
+            <column name="organization_photo"
+                    type="VARCHAR(2000000)">
+            </column>
+            <column name="description"
+                    type="VARCHAR(1000)">
+            </column>
+            <column name="address"
+                    type="VARCHAR(200)">
+                <constraints nullable = "false"/>
+            </column>
+            <column name="needs"
+                    type="VARCHAR(1000)">
+            </column>
+            <column name="link_to_website"
+                    type="VARCHAR(200)">
+            </column>
+
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

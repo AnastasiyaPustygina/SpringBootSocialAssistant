@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <changeSet id="2022-05-03--0004-message-data" author="apustygina">
+<!--        <loadData tableName="message"-->
+<!--                  file="db.changelog/data/csv/2022-05-03&#45;&#45;0004-message-data.csv"-->
+<!--                  separator=";"-->
+<!--                  quotchar='"'-->
+<!--                  encoding="UTF-8"/>-->
+    </changeSet>
+</databaseChangeLog>
+<!--        id;whose;value;time;chat_id-->
+<!--        1;me;Hello;21:33;1-->
+<!--        2;me;So, I think that this is a good idea;09:12;2-->
+<!--        3;other;Yes;21:56;2-->

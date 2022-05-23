@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <changeSet id="2022-05-03--0003-chat-data" author="apustygina">
+<!--        <loadData tableName="chat"-->
+<!--                  file="db.changelog/data/csv/2022-05-03&#45;&#45;0003-chat-data.csv"-->
+<!--                  separator=";"-->
+<!--                  quotchar='"'-->
+<!--                  encoding="UTF-8"/>-->
+    </changeSet>
+</databaseChangeLog>
+
+<!--        id;person_id;organization_id-->
+<!--        1;1;2-->
+<!--        2;1;3-->
+<!--        3;3;1-->
