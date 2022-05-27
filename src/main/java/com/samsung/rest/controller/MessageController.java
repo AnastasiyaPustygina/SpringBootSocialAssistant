@@ -5,6 +5,7 @@ import com.samsung.domain.Chat;
 import com.samsung.domain.Message;
 import com.samsung.domain.Organization;
 import com.samsung.domain.Person;
+import com.samsung.rest.dto.ChatDto;
 import com.samsung.rest.dto.MessageDto;
 import com.samsung.service.ChatService;
 import com.samsung.service.MessageService;
@@ -45,7 +46,6 @@ public class MessageController {
                 ), new Organization(Integer.parseInt(str_org[0]), str_org[1], str_org[2], str_org[3],
                 str_org[4], str_org[5], str_org[6], str_org[7]));
         Message message = messageService.insert(new Message(Integer.parseInt(id), whose, value, time, chat));
-        System.out.println(message.toString());
         return MessageDto.toDto(message);
     }
     @PutMapping("/message/{id}")
@@ -69,6 +69,15 @@ public class MessageController {
                 .stream()
                 .map(MessageDto::toDto)
                 .collect(Collectors.toList());
+    }
+    @GetMapping("/message/{id}")
+    public MessageDto getMessageById(@PathVariable int id) {
+        Message message = messageService.getById(id);
+        return MessageDto.toDto(message);
+    }
+    @GetMapping("/message/size")
+    public int getMessageSize() {
+        return messageService.getMsgSize();
     }
     @DeleteMapping("/chat/{id}/message")
     public void deleteMessageByChatId(@PathVariable int id) {

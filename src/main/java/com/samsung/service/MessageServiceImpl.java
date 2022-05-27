@@ -27,6 +27,16 @@ public class MessageServiceImpl implements MessageService{
     }
 
     @Override
+    public Message getById(int id) {
+        return messageRepository.getById(id);
+    }
+
+    @Override
+    public int getMsgSize() {
+        return messageRepository.findAll().size();
+    }
+
+    @Override
     public List<Message> getAll() {
         return messageRepository.findAll();
     }

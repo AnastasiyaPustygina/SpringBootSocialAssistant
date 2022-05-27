@@ -11,6 +11,8 @@ public interface MessageService {
     Message insert(Message message);
     List<Message> getByChatId(int id);
     List<Message> getAll();
+    Message getById(int id);
+    int getMsgSize();
     void deleteById(int id);
     Message update(int id, String whose, String value, String time, int chat_id);
     void deleteByChatId(int id);
