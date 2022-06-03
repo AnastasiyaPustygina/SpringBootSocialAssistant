@@ -46,12 +46,6 @@ public class MessageServiceImpl implements MessageService{
         messageRepository.deleteById(id);
     }
 
-    @Override
-    public Message update(int id, String whose, String value, String time, int chat_id) {
-        Chat chat = chatRepository.findById(chat_id);
-        Message message = Message.builder().id(id).whose(whose).value(value).time(time).chat(chat).build();
-        return messageRepository.save(message);
-    }
 
     @Override
     public void deleteByChatId(int id) {

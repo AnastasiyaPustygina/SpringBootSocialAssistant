@@ -41,6 +41,10 @@
                     type="NUMERIC(4,0)">
                 <constraints nullable = "false"/>
             </column>
+            <column name="password"
+                    type="VARCHAR(100)">
+            <constraints nullable = "false"/>
+            </column>
 
         </createTable>
     </changeSet>

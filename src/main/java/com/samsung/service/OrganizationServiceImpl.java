@@ -28,11 +28,7 @@ public class OrganizationServiceImpl implements OrganizationService{
     }
 
     @Override
-    public Organization update(int id, String name, String type, String organizationPhoto, String
-            description, String address, String needs, String linkToWebsite) {
-        Organization organization = Organization.builder().id(id).name(name).type(type).
-                organizationPhoto(organizationPhoto).description(description).address(address).
-                needs(needs).linkToWebsite(linkToWebsite).build();
+    public Organization update(Organization organization) {
 
         return organizationRepository.save(organization);
     }

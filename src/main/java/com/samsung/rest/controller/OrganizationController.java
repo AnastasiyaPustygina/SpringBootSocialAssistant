@@ -26,16 +26,9 @@ public class OrganizationController {
         return OrganizationDto.toDto(organization);
     }
     @PutMapping("/organization/{id}")
-    public OrganizationDto updateOrganization(@PathVariable int id,
-                                              @RequestParam String name,
-                                              @RequestParam String type,
-                                              @RequestParam String organizationPhoto,
-                                              @RequestParam String description,
-                                              @RequestParam String address,
-                                              @RequestParam String needs,
-                                              @RequestParam String linkToWebsite){
-        Organization organization = organizationService.update(id, name, type,
-                organizationPhoto, description, address, needs, linkToWebsite);
+    public OrganizationDto updateOrganization(@RequestBody OrganizationDto organizationDto){
+        Organization organization = organizationService.update(
+                OrganizationDto.toDomainObject(organizationDto));
         return OrganizationDto.toDto(organization);
     }
     @DeleteMapping("/organization/{id}")

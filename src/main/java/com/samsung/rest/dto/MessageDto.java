@@ -1,5 +1,6 @@
 package com.samsung.rest.dto;
 
+import com.samsung.domain.Chat;
 import com.samsung.domain.Message;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -22,6 +23,12 @@ public class MessageDto {
                 message.getWhose(), message.getValue(), message.getTime(),
                 ChatDto.toDto(message.getChat()));
 
+    }
+    public static Message toDomainObject(MessageDto messageDto){
+
+        return new Message(messageDto.getId(), messageDto.getWhose(),
+                messageDto.getValue(), messageDto.getTime(), ChatDto.toDomainObject(
+                        messageDto.getChatDto()));
     }
 
 }

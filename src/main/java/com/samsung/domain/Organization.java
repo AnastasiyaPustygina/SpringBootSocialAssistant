@@ -22,6 +22,8 @@ public class Organization {
     private String name;
     @Column(name = "type")
     private String type;
+    @Column(name = "login")
+    private String login;
     @Column(name = "organization_photo")
     private String organizationPhoto;
     @Column(name = "description")
@@ -32,4 +34,6 @@ public class Organization {
     private String needs;
     @Column(name = "link_to_website")
     private String linkToWebsite;
+    @Column(name = "password")
+    private String password;
 }
