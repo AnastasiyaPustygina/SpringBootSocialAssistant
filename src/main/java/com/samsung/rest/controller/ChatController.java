@@ -18,32 +18,6 @@ public class ChatController {
         return chatService.getAll().stream().map(ChatDto::toDto)
                 .collect(Collectors.toList());
     }
-//    @PostMapping("/chat")
-//    public ChatDto insertChat(@RequestParam String id,
-//                              @RequestParam String idPerson,
-//                              @RequestParam String namePerson,
-//                              @RequestParam String telephonePerson,
-//                              @RequestParam String emailPerson,
-//                              @RequestParam String cityPerson,
-//                              @RequestParam String photoPerson,
-//                              @RequestParam String dateOfBirthPerson,
-//                              @RequestParam String agePerson,
-//                              @RequestParam String idOrganization,
-//                              @RequestParam String nameOrganization,
-//                              @RequestParam String typeOrganization,
-//                              @RequestParam String photoOrganization,
-//                              @RequestParam String descriptionOrganization,
-//                              @RequestParam String addressOrganization,
-//                              @RequestParam String needsOrganization,
-//                              @RequestParam String linkToWebsiteOrganization){
-//        Chat chat = chatService.insert(new Chat(Integer.parseInt(id),
-//                new Person(Integer.parseInt(idPerson), namePerson, telephonePerson, emailPerson,
-//                        cityPerson, photoPerson, dateOfBirthPerson, Integer.parseInt(agePerson)),
-//                new Organization(Integer.parseInt(idOrganization), nameOrganization, typeOrganization,
-//                        photoOrganization, descriptionOrganization, addressOrganization, needsOrganization,
-//                        linkToWebsiteOrganization)));
-//        return ChatDto.toDto(chat);
-//    }
 
     @PostMapping("/chat")
     public ChatDto insertChat(@RequestBody ChatDto chatDto){

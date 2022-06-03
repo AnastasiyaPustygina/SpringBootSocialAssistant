@@ -33,38 +33,6 @@ public class MessageController {
                 .collect(Collectors.toList());
     }
 
-//    @PostMapping("/message")
-//    public MessageDto insertMessage(@RequestParam String id,
-//                                    @RequestParam String whose,
-//                                    @RequestParam String value,
-//                                    @RequestParam String time,
-//                                    @RequestParam String idChat,
-//                                    @RequestParam String idPerson,
-//                                    @RequestParam String namePerson,
-//                                    @RequestParam String telephonePerson,
-//                                    @RequestParam String emailPerson,
-//                                    @RequestParam String cityPerson,
-//                                    @RequestParam String photoPerson,
-//                                    @RequestParam String dateOfBirthPerson,
-//                                    @RequestParam String agePerson,
-//                                    @RequestParam String idOrganization,
-//                                    @RequestParam String nameOrganization,
-//                                    @RequestParam String typeOrganization,
-//                                    @RequestParam String photoOrganization,
-//                                    @RequestParam String descriptionOrganization,
-//                                    @RequestParam String addressOrganization,
-//                                    @RequestParam String needsOrganization,
-//                                    @RequestParam String linkToWebsiteOrganization){
-//        Chat chat = new Chat(Integer.parseInt(idChat),
-//                new Person(Integer.parseInt(idPerson), namePerson, telephonePerson, emailPerson,
-//                        cityPerson, photoPerson, dateOfBirthPerson, Integer.parseInt(agePerson)),
-//                new Organization(Integer.parseInt(idOrganization), nameOrganization, typeOrganization,
-//                        photoOrganization, descriptionOrganization, addressOrganization, needsOrganization,
-//                        linkToWebsiteOrganization));
-//        Message message = messageService.insert(new Message(Integer.parseInt(id), whose, value, time, chat));
-//        return MessageDto.toDto(message);
-//    }
-
     @PostMapping("/message")
     public MessageDto insertMessage(@RequestBody MessageDto messageDto){
         Message message = messageService.insert(MessageDto.toDomainObject(messageDto));
