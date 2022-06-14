@@ -31,7 +31,7 @@
                 <constraints nullable = "false"/>
             </column>
             <column name="photo"
-                    type="VARCHAR(2000)">
+                    type="VARCHAR(3000000)">
             </column>
             <column name="date_of_birth"
                     type="VARCHAR(100)">
