@@ -29,7 +29,7 @@
                 <constraints nullable = "false"/>
             </column>
             <column name="organization_photo"
-                    type="VARCHAR(2000000)">
+                    type="VARCHAR(2000)">
             </column>
             <column name="description"
                     type="VARCHAR(10000)">
@@ -45,7 +45,7 @@
                     type="VARCHAR(200)">
             </column>
             <column name="password"
-                    type="VARCHAR(100)">
+                    type="VARCHAR(2000)">
                 <constraints nullable = "false"/>
             </column>
 
